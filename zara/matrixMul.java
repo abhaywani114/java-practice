@@ -1,16 +1,28 @@
+import java.util.Scanner;
+/*
+ [1 2 3
+  4 5 6
+  7 8 9
+ ] 3 x 3
+ [
+  10 11 12
+  13 14 15
+  16 17 18
+ ] 3 x 3
+ matix: r1, c1,
+ matrx: r2, c2
+ c1 == r2
+ r1 x c2
+
+*/
 class matrixMul {
   public static void main(String[] argv) {
-    int[][] matrix_1 = {
-      {1,   2,    3},
-      {4,   5,    6}
-    };
+ 
+    int[][] matrix_1 = getMatrx();
+    int[][] matrix_2 = getMatrx();
 
-    int[][] matrix_2 = {
-      {10,  11},
-      {20,  21},
-      {30,  31}
-    };
     int[][] result = new int[matrix_1.length][matrix_2[0].length];
+    
     if (matrix_1[0].length != matrix_2.length) {
       System.out.println("Uncompatible matrix for multiplication");
       return;
@@ -36,5 +48,21 @@ class matrixMul {
       }
       System.out.println();
     }
+  }
+  public static int[][] getMatrx() {
+       
+    Scanner keyboard = new Scanner(System.in);
+    System.out.println("Enter rows for matrix: ");
+    int row = keyboard.nextInt();
+    System.out.println("Enter col for matrix: ");
+    int col = keyboard.nextInt();
+    System.out.println("Enter elements for your matrix:");
+    int[][] matrix = new int[row][col];
+    for(int i = 0; i < row; i++) {
+      for(int j = 0; j < col; j++) {
+        matrix[i][j] = keyboard.nextInt();
+      }
+    }
+    return matrix;
   }
 }
