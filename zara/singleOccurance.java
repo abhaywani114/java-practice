@@ -23,7 +23,7 @@ class singleOccurance {
 
       int[] resultArray = new int[numberOfUniqueElements];
       int j = 0;
-      for(int i = 0; i <= numberOfUniqueElements; i++) {
+      for(int i = 0; i < trackArray.length; i++) {
         if (trackArray[i] > 0)
             resultArray[j++]  = i;
       }
